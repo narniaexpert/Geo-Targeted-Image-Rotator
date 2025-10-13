@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geo-Targeted Ad Rotator</title>
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Using a system font stack to avoid dependencies on Google services */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+        }
+        /* A simple fade-in for the ads once loaded */
+        .ad-image {
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+        .ad-image.loaded {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800 antialiased">
+
+    <div class="container mx-auto p-4 sm:p-6 lg:p-8">
+        <header class="text-center mb-8">
+            <h1 class="text-3xl sm:text-4xl font-bold text-gray-900">Geo-Targeted Ad Rotator</h1>
+            <p class="mt-2 text-lg text-gray-600">Ads are displayed based on your IP address location.</p>
+            <p id="location-status" class="mt-2 font-semibold text-indigo-600 h-6"></p>
+        </header>
+
+        <main class="space-y-12">
+            <!-- Section for the responsive 3:1 ads -->
+            <div>
+                <h2 class="text-2xl font-semibold mb-4 text-center">Responsive Ads (3:1 Ratio)</h2>
+                <p class="text-center text-gray-500 mb-4 max-w-2xl mx-auto">These ads scale from 300x100 up to 1080x360, maintaining their aspect ratio.</p>
+                <div class="space-y-8">
+                    <!-- Ad Unit Container 1 -->
+                    <div class="w-full max-w-[1080px] mx-auto">
+                        <div class="bg-white p-4 rounded-lg shadow-sm">
+                            <span class="text-xs text-gray-500 block mb-1">Sponsored:</span>
+                            <div class="border border-gray-300 rounded-lg p-2">
+                                <img id="ad-responsive-1"
+                                     src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                                     alt="Responsive Advertisement 1"
+                                     class="ad-image w-full h-auto aspect-[3/1] object-cover rounded-md">
+                            </div>
+                            <div class="text-center mt-3">
+                                <a href="mailto:Ads@NarniaFans.com" class="text-sm text-indigo-600 hover:underline">Advertise with us: Ads@NarniaFans.com</a>
+                            </div>
+                        </div>
+                    </div>
+                     <!-- Ad Unit Container 2 -->
+                    <div class="w-full max-w-[1080px] mx-auto">
+                        <div class="bg-white p-4 rounded-lg shadow-sm">
+                            <span class="text-xs text-gray-500 block mb-1">Sponsored:</span>
+                            <div class="border border-gray-300 rounded-lg p-2">
+                                <img id="ad-responsive-2"
+                                     src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                                     alt="Responsive Advertisement 2"
+                                     class="ad-image w-full h-auto aspect-[3/1] object-cover rounded-md">
+                            </div>
+                            <div class="text-center mt-3">
+                                <a href="mailto:Ads@NarniaFans.com" class="text-sm text-indigo-600 hover:underline">Advertise with us: Ads@NarniaFans.com</a>
+                            </div>
+                        </div>
+                    </div>
+                     <!-- Ad Unit Container 3 -->
+                    <div class="w-full max-w-[1080px] mx-auto">
+                        <div class="bg-white p-4 rounded-lg shadow-sm">
+                            <span class="text-xs text-gray-500 block mb-1">Sponsored:</span>
+                            <div class="border border-gray-300 rounded-lg p-2">
+                                <img id="ad-responsive-3"
+                                     src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                                     alt="Responsive Advertisement 3"
+                                     class="ad-image w-full h-auto aspect-[3/1] object-cover rounded-md">
+                            </div>
+                            <div class="text-center mt-3">
+                                <a href="mailto:Ads@NarniaFans.com" class="text-sm text-indigo-600 hover:underline">Advertise with us: Ads@NarniaFans.com</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section for fixed-size ads -->
+            <div>
+                <h2 class="text-2xl font-semibold mb-4 text-center">Fixed Size Ads</h2>
+                <p class="text-center text-gray-500 mb-4">These ads have a fixed width and height.</p>
+                <div class="flex flex-wrap justify-center items-start gap-8">
+                    <!-- 336x280 Ad Unit -->
+                    <div class="w-[336px] bg-white p-4 rounded-lg shadow-sm">
+                        <span class="text-xs text-gray-500 block mb-1">Sponsored:</span>
+                        <div class="border border-gray-300 rounded-lg p-2">
+                            <img id="ad-336x280"
+                                 src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                                 alt="336x280 Advertisement"
+                                 class="ad-image w-[336px] h-[280px] object-cover rounded-md">
+                        </div>
+                         <div class="text-center mt-3">
+                            <a href="mailto:Ads@NarniaFans.com" class="text-sm text-indigo-600 hover:underline">Advertise with us: Ads@NarniaFans.com</a>
+                        </div>
+                    </div>
+                    <!-- 300x600 Ad Unit -->
+                    <div class="w-[300px] bg-white p-4 rounded-lg shadow-sm">
+                        <span class="text-xs text-gray-500 block mb-1">Sponsored:</span>
+                        <div class="border border-gray-300 rounded-lg p-2">
+                            <img id="ad-300x600"
+                                 src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                                 alt="300x600 Advertisement"
+                                 class="ad-image w-[300px] h-[600px] object-cover rounded-md">
+                        </div>
+                         <div class="text-center mt-3">
+                            <a href="mailto:Ads@NarniaFans.com" class="text-sm text-indigo-600 hover:underline">Advertise with us: Ads@NarniaFans.com</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // --- Configuration for Ad Images ---
+            const ads = {
+                usa: {
+                    responsive1: 'https://placehold.co/1080x360/0033a0/ffffff?text=Made+for+USA+1',
+                    responsive2: 'https://placehold.co/1080x360/0033a0/ffffff?text=Made+for+USA+2',
+                    responsive3: 'https://placehold.co/1080x360/0033a0/ffffff?text=Made+for+USA+3',
+                    fixed336: 'https://placehold.co/336x280/0033a0/ffffff?text=USA+Ad',
+                    fixed600: 'https://placehold.co/300x600/0033a0/ffffff?text=USA+Ad'
+                },
+                international: {
+                    responsive1: 'https://placehold.co/1080x360/c41130/ffffff?text=International+Offer+1',
+                    responsive2: 'https://placehold.co/1080x360/c41130/ffffff?text=International+Offer+2',
+                    responsive3: 'https://placehold.co/1080x360/c41130/ffffff?text=International+Offer+3',
+                    fixed336: 'https://placehold.co/336x280/c41130/ffffff?text=Global+Ad',
+                    fixed600: 'https://placehold.co/300x600/c41130/ffffff?text=Global+Ad'
+                }
+            };
+
+            // --- DOM Element References ---
+            const responsiveAdImg1 = document.getElementById('ad-responsive-1');
+            const responsiveAdImg2 = document.getElementById('ad-responsive-2');
+            const responsiveAdImg3 = document.getElementById('ad-responsive-3');
+            const fixed336AdImg = document.getElementById('ad-336x280');
+            const fixed600AdImg = document.getElementById('ad-300x600');
+            const locationStatusEl = document.getElementById('location-status');
+
+            // --- Main Function to Fetch Location and Load Ads ---
+            async function initializeAdRotator() {
+                let locationData;
+
+                // --- Try Primary API: freegeoip.app ---
+                try {
+                    const response = await fetch('https://freegeoip.app/json/');
+                    if (!response.ok) throw new Error(`Primary API failed: ${response.status}`);
+                    const data = await response.json();
+                    locationData = {
+                        countryCode: data.country_code,
+                        city: data.city,
+                        countryName: data.country_name
+                    };
+                } catch (error1) {
+                    console.warn('Primary geolocation API failed. Trying fallback.', error1);
+                    
+                    // --- Try Fallback API: ipinfo.io ---
+                    try {
+                        const response = await fetch('https://ipinfo.io/json');
+                        if (!response.ok) throw new Error(`Fallback API failed: ${response.status}`);
+                        const data = await response.json();
+                        locationData = {
+                            countryCode: data.country,
+                            city: data.city,
+                            countryName: data.country
+                        };
+                    } catch (error2) {
+                        console.error('Ad Rotator Error: Both geolocation APIs failed.', error2);
+                        displayAds(ads.usa, 'Could not determine location. Displaying USA ads by default.');
+                        return;
+                    }
+                }
+
+                // --- If either API succeeded, determine which ads to show ---
+                if (locationData && locationData.countryCode) {
+                    let adSet;
+                    let locationString = `Location: ${locationData.city}, ${locationData.countryName}.`;
+                    let adTypeString;
+
+                    if (locationData.countryCode === 'US') {
+                        adSet = ads.usa;
+                        adTypeString = "USA ads.";
+                    } else {
+                        adSet = ads.international;
+                        adTypeString = "International ads.";
+                    }
+                    displayAds(adSet, `${locationString} Displaying ${adTypeString}`);
+                } else {
+                     console.error('Ad Rotator Error: Geolocation API returned invalid data.');
+                     displayAds(ads.usa, 'Could not determine location. Displaying USA ads by default.');
+                }
+            }
+            
+            // Helper function to set all ad sources and update status
+            function displayAds(adSet, statusMessage) {
+                locationStatusEl.textContent = statusMessage;
+                setAdSource(responsiveAdImg1, adSet.responsive1);
+                setAdSource(responsiveAdImg2, adSet.responsive2);
+                setAdSource(responsiveAdImg3, adSet.responsive3);
+                setAdSource(fixed336AdImg, adSet.fixed336);
+                setAdSource(fixed600AdImg, adSet.fixed600);
+            }
+
+            // Helper function to set image src and fade it in
+            function setAdSource(imageElement, src) {
+                if(imageElement) {
+                    imageElement.src = src;
+                    imageElement.onload = () => {
+                        imageElement.classList.add('loaded');
+                    };
+                    if (imageElement.complete) {
+                       imageElement.classList.add('loaded');
+                    }
+                }
+            }
+
+            // Run the ad rotator logic
+            initializeAdRotator();
+        });
+    </script>
+
+</body>
+</html>
