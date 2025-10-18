@@ -3,20 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Geo-Targeted Ad Rotator</title>
+    <title>Geo-Targeted Image Rotator</title>
     <!-- Tailwind CSS for styling -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* Using a system font stack to avoid dependencies on Google services */
+        /* Using a system font stack to avoid dependencies on external services */
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
         }
-        /* A simple fade-in for the ads once loaded */
-        .ad-image {
+        /* A simple fade-in for the images once loaded */
+        .dynamic-image {
             opacity: 0;
             transition: opacity 0.5s ease-in-out;
         }
-        .ad-image.loaded {
+        .dynamic-image.loaded {
             opacity: 1;
         }
     </style>
@@ -25,94 +25,94 @@
 
     <div class="container mx-auto p-4 sm:p-6 lg:p-8">
         <header class="text-center mb-8">
-            <h1 class="text-3xl sm:text-4xl font-bold text-gray-900">Geo-Targeted Ad Rotator</h1>
-            <p class="mt-2 text-lg text-gray-600">Ads are displayed based on your IP address location.</p>
+            <h1 class="text-3xl sm:text-4xl font-bold text-gray-900">Geo-Targeted Image Rotator</h1>
+            <p class="mt-2 text-lg text-gray-600">Images are displayed based on your IP address location.</p>
             <p id="location-status" class="mt-2 font-semibold text-indigo-600 h-6"></p>
         </header>
 
         <main class="space-y-12">
-            <!-- Section for the responsive 3:1 ads -->
+            <!-- Section for the responsive 3:1 images -->
             <div>
-                <h2 class="text-2xl font-semibold mb-4 text-center">Responsive Ads (3:1 Ratio)</h2>
-                <p class="text-center text-gray-500 mb-4 max-w-2xl mx-auto">These ads scale from 300x100 up to 1080x360, maintaining their aspect ratio.</p>
+                <h2 class="text-2xl font-semibold mb-4 text-center">Responsive Images (3:1 Ratio)</h2>
+                <p class="text-center text-gray-500 mb-4 max-w-2xl mx-auto">These images scale from 300x100 up to 1080x360, maintaining their aspect ratio.</p>
                 <div class="space-y-8">
-                    <!-- Ad Unit Container 1 -->
+                    <!-- Image Unit Container 1 -->
                     <div class="w-full max-w-[1080px] mx-auto">
                         <div class="bg-white p-4 rounded-lg shadow-sm">
                             <span class="text-xs text-gray-500 block mb-1">Sponsored:</span>
                             <div class="border border-gray-300 rounded-lg p-2">
-                                <img id="ad-responsive-1"
+                                <img id="image-responsive-1"
                                      src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-                                     alt="Responsive Advertisement 1"
-                                     class="ad-image w-full h-auto aspect-[3/1] object-cover rounded-md">
+                                     alt="Responsive Image 1"
+                                     class="dynamic-image w-full h-auto aspect-[3/1] object-cover rounded-md">
                             </div>
                             <div class="text-center mt-3">
-                                <a href="mailto:Ads@NarniaFans.com" class="text-sm text-indigo-600 hover:underline">Advertise with us: Ads@NarniaFans.com</a>
+                                <a href="mailto:Ads@NarniaFans.com" class="text-sm text-indigo-600 hover:underline">Sponsor this space: Ads@NarniaFans.com</a>
                             </div>
                         </div>
                     </div>
-                     <!-- Ad Unit Container 2 -->
+                     <!-- Image Unit Container 2 -->
                     <div class="w-full max-w-[1080px] mx-auto">
                         <div class="bg-white p-4 rounded-lg shadow-sm">
                             <span class="text-xs text-gray-500 block mb-1">Sponsored:</span>
                             <div class="border border-gray-300 rounded-lg p-2">
-                                <img id="ad-responsive-2"
+                                <img id="image-responsive-2"
                                      src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-                                     alt="Responsive Advertisement 2"
-                                     class="ad-image w-full h-auto aspect-[3/1] object-cover rounded-md">
+                                     alt="Responsive Image 2"
+                                     class="dynamic-image w-full h-auto aspect-[3/1] object-cover rounded-md">
                             </div>
                             <div class="text-center mt-3">
-                                <a href="mailto:Ads@NarniaFans.com" class="text-sm text-indigo-600 hover:underline">Advertise with us: Ads@NarniaFans.com</a>
+                                <a href="mailto:Ads@NarniaFans.com" class="text-sm text-indigo-600 hover:underline">Sponsor this space: Ads@NarniaFans.com</a>
                             </div>
                         </div>
                     </div>
-                     <!-- Ad Unit Container 3 -->
+                     <!-- Image Unit Container 3 -->
                     <div class="w-full max-w-[1080px] mx-auto">
                         <div class="bg-white p-4 rounded-lg shadow-sm">
                             <span class="text-xs text-gray-500 block mb-1">Sponsored:</span>
                             <div class="border border-gray-300 rounded-lg p-2">
-                                <img id="ad-responsive-3"
+                                <img id="image-responsive-3"
                                      src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-                                     alt="Responsive Advertisement 3"
-                                     class="ad-image w-full h-auto aspect-[3/1] object-cover rounded-md">
+                                     alt="Responsive Image 3"
+                                     class="dynamic-image w-full h-auto aspect-[3/1] object-cover rounded-md">
                             </div>
                             <div class="text-center mt-3">
-                                <a href="mailto:Ads@NarniaFans.com" class="text-sm text-indigo-600 hover:underline">Advertise with us: Ads@NarniaFans.com</a>
+                                <a href="mailto:Ads@NarniaFans.com" class="text-sm text-indigo-600 hover:underline">Sponsor this space: Ads@NarniaFans.com</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Section for fixed-size ads -->
+            <!-- Section for fixed-size images -->
             <div>
-                <h2 class="text-2xl font-semibold mb-4 text-center">Fixed Size Ads</h2>
-                <p class="text-center text-gray-500 mb-4">These ads have a fixed width and height.</p>
+                <h2 class="text-2xl font-semibold mb-4 text-center">Fixed Size Images</h2>
+                <p class="text-center text-gray-500 mb-4">These images have a fixed width and height.</p>
                 <div class="flex flex-wrap justify-center items-start gap-8">
-                    <!-- 336x280 Ad Unit -->
+                    <!-- 336x280 Image Unit -->
                     <div class="w-[336px] bg-white p-4 rounded-lg shadow-sm">
                         <span class="text-xs text-gray-500 block mb-1">Sponsored:</span>
                         <div class="border border-gray-300 rounded-lg p-2">
-                            <img id="ad-336x280"
+                            <img id="image-336x280"
                                  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-                                 alt="336x280 Advertisement"
-                                 class="ad-image w-[336px] h-[280px] object-cover rounded-md">
+                                 alt="336x280 Image"
+                                 class="dynamic-image w-[336px] h-[280px] object-cover rounded-md">
                         </div>
                          <div class="text-center mt-3">
-                            <a href="mailto:Ads@NarniaFans.com" class="text-sm text-indigo-600 hover:underline">Advertise with us: Ads@NarniaFans.com</a>
+                            <a href="mailto:Ads@NarniaFans.com" class="text-sm text-indigo-600 hover:underline">Sponsor this space: Ads@NarniaFans.com</a>
                         </div>
                     </div>
-                    <!-- 300x600 Ad Unit -->
+                    <!-- 300x600 Image Unit -->
                     <div class="w-[300px] bg-white p-4 rounded-lg shadow-sm">
                         <span class="text-xs text-gray-500 block mb-1">Sponsored:</span>
                         <div class="border border-gray-300 rounded-lg p-2">
-                            <img id="ad-300x600"
+                            <img id="image-300x600"
                                  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-                                 alt="300x600 Advertisement"
-                                 class="ad-image w-[300px] h-[600px] object-cover rounded-md">
+                                 alt="300x600 Image"
+                                 class="dynamic-image w-[300px] h-[600px] object-cover rounded-md">
                         </div>
                          <div class="text-center mt-3">
-                            <a href="mailto:Ads@NarniaFans.com" class="text-sm text-indigo-600 hover:underline">Advertise with us: Ads@NarniaFans.com</a>
+                            <a href="mailto:Ads@NarniaFans.com" class="text-sm text-indigo-600 hover:underline">Sponsor this space: Ads@NarniaFans.com</a>
                         </div>
                     </div>
                 </div>
@@ -122,34 +122,34 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // --- Configuration for Ad Images ---
-            const ads = {
+            // --- Configuration for Images ---
+            const images = {
                 usa: {
-                    responsive1: 'https://placehold.co/1080x360/0033a0/ffffff?text=Made+for+USA+1',
-                    responsive2: 'https://placehold.co/1080x360/0033a0/ffffff?text=Made+for+USA+2',
-                    responsive3: 'https://placehold.co/1080x360/0033a0/ffffff?text=Made+for+USA+3',
+                    responsive1: 'https://narniafans.com/wp-content/uploads/2025/10/LWW-Logos-Theatre-Narnia-700X233.webp',
+                    responsive2: 'https://narniafans.com/wp-content/uploads/2025/10/LWW-Logos-Theatre-Narnia-700X233.webp',
+                    responsive3: 'https://narniafans.com/wp-content/uploads/2025/10/LWW-Logos-Theatre-Narnia-700X233.webp',
                     fixed336: 'https://placehold.co/336x280/0033a0/ffffff?text=USA+Ad',
                     fixed600: 'https://placehold.co/300x600/0033a0/ffffff?text=USA+Ad'
                 },
                 international: {
-                    responsive1: 'https://placehold.co/1080x360/c41130/ffffff?text=International+Offer+1',
-                    responsive2: 'https://placehold.co/1080x360/c41130/ffffff?text=International+Offer+2',
-                    responsive3: 'https://placehold.co/1080x360/c41130/ffffff?text=International+Offer+3',
-                    fixed336: 'https://placehold.co/336x280/c41130/ffffff?text=Global+Ad',
-                    fixed600: 'https://placehold.co/300x600/c41130/ffffff?text=Global+Ad'
+                    responsive1: 'https://placehold.co/1080x360/c41130/ffffff?text=International+Display+1',
+                    responsive2: 'https://placehold.co/1080x360/c41130/ffffff?text=International+Display+2',
+                    responsive3: 'https://placehold.co/1080x360/c41130/ffffff?text=International+Display+3',
+                    fixed336: 'https://placehold.co/336x280/c41130/ffffff?text=Global+Display',
+                    fixed600: 'https://placehold.co/300x600/c41130/ffffff?text=Global+Display'
                 }
             };
 
             // --- DOM Element References ---
-            const responsiveAdImg1 = document.getElementById('ad-responsive-1');
-            const responsiveAdImg2 = document.getElementById('ad-responsive-2');
-            const responsiveAdImg3 = document.getElementById('ad-responsive-3');
-            const fixed336AdImg = document.getElementById('ad-336x280');
-            const fixed600AdImg = document.getElementById('ad-300x600');
+            const responsiveImg1 = document.getElementById('image-responsive-1');
+            const responsiveImg2 = document.getElementById('image-responsive-2');
+            const responsiveImg3 = document.getElementById('image-responsive-3');
+            const fixed336Img = document.getElementById('image-336x280');
+            const fixed600Img = document.getElementById('image-300x600');
             const locationStatusEl = document.getElementById('location-status');
 
-            // --- Main Function to Fetch Location and Load Ads ---
-            async function initializeAdRotator() {
+            // --- Main Function to Fetch Location and Load Images ---
+            async function initializeImageRotator() {
                 let locationData;
 
                 // --- Try Primary API: freegeoip.app ---
@@ -176,44 +176,44 @@
                             countryName: data.country
                         };
                     } catch (error2) {
-                        console.error('Ad Rotator Error: Both geolocation APIs failed.', error2);
-                        displayAds(ads.usa, 'Could not determine location. Displaying USA ads by default.');
+                        console.error('Image Rotator Error: Both geolocation APIs failed.', error2);
+                        displayImages(images.usa, 'Could not determine location. Displaying USA images by default.');
                         return;
                     }
                 }
 
-                // --- If either API succeeded, determine which ads to show ---
+                // --- If either API succeeded, determine which images to show ---
                 if (locationData && locationData.countryCode) {
-                    let adSet;
+                    let imageSet;
                     let locationString = `Location: ${locationData.city}, ${locationData.countryName}.`;
-                    let adTypeString;
+                    let imageTypeString;
 
                     if (locationData.countryCode === 'US') {
-                        adSet = ads.usa;
-                        adTypeString = "USA ads.";
+                        imageSet = images.usa;
+                        imageTypeString = "USA images.";
                     } else {
-                        adSet = ads.international;
-                        adTypeString = "International ads.";
+                        imageSet = images.international;
+                        imageTypeString = "International images.";
                     }
-                    displayAds(adSet, `${locationString} Displaying ${adTypeString}`);
+                    displayImages(imageSet, `${locationString} Displaying ${imageTypeString}`);
                 } else {
-                     console.error('Ad Rotator Error: Geolocation API returned invalid data.');
-                     displayAds(ads.usa, 'Could not determine location. Displaying USA ads by default.');
+                     console.error('Image Rotator Error: Geolocation API returned invalid data.');
+                     displayImages(images.usa, 'Could not determine location. Displaying USA images by default.');
                 }
             }
             
-            // Helper function to set all ad sources and update status
-            function displayAds(adSet, statusMessage) {
+            // Helper function to set all image sources and update status
+            function displayImages(imageSet, statusMessage) {
                 locationStatusEl.textContent = statusMessage;
-                setAdSource(responsiveAdImg1, adSet.responsive1);
-                setAdSource(responsiveAdImg2, adSet.responsive2);
-                setAdSource(responsiveAdImg3, adSet.responsive3);
-                setAdSource(fixed336AdImg, adSet.fixed336);
-                setAdSource(fixed600AdImg, adSet.fixed600);
+                setImageSource(responsiveImg1, imageSet.responsive1);
+                setImageSource(responsiveImg2, imageSet.responsive2);
+                setImageSource(responsiveImg3, imageSet.responsive3);
+                setImageSource(fixed336Img, imageSet.fixed336);
+                setImageSource(fixed600Img, imageSet.fixed600);
             }
 
             // Helper function to set image src and fade it in
-            function setAdSource(imageElement, src) {
+            function setImageSource(imageElement, src) {
                 if(imageElement) {
                     imageElement.src = src;
                     imageElement.onload = () => {
@@ -225,10 +225,11 @@
                 }
             }
 
-            // Run the ad rotator logic
-            initializeAdRotator();
+            // Run the image rotator logic
+            initializeImageRotator();
         });
     </script>
 
 </body>
 </html>
+
