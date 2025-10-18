@@ -1,16 +1,16 @@
-# Geo-Targeted-Ad-Rotator
-A simple, dependency-free ad rotator that displays different image ads based on the user's geographic location. This project is contained within a single HTML file, uses vanilla JavaScript for its logic, and is styled with Tailwind CSS via a CDN.
+# Geo-Targeted-Image-Rotator
+A simple, dependency-free image rotator that displays different images based on the user's geographic location. This project is contained within a single HTML file, uses vanilla JavaScript for its logic, and is styled with Tailwind CSS via a CDN.
 
 It is designed to be lightweight, easy to configure, and free of dependencies on services (like Google Fonts) that may be restricted in certain regions, ensuring wider accessibility.
 
 # Features
-Geographic Ad Targeting: Automatically detects the user's country via their IP address and displays the appropriate ad set.
+Geographic Image Targeting: Automatically detects the user's country via their IP address and displays the appropriate ad set.
 
-Multiple Ad Formats: Includes examples for responsive 3:1 ratio ads as well as fixed-size 336x280 and 300x600 ad units.
+Multiple Image Formats: Includes examples for responsive 3:1 ratio images as well as fixed-size 336x280 and 300x600 ad units.
 
-Resilient Fallback System: Uses a primary and a secondary geolocation API. If both fail, it gracefully defaults to a specified ad set (e.g., USA ads).
+Resilient Fallback System: Uses a primary and a secondary geolocation API. If both fail, it gracefully defaults to a specified image set (e.g., USA image).
 
-Easy to Customize: Ad image URLs and targeting logic are stored in a simple configuration object within the JavaScript, making it easy to adapt for your own needs.
+Easy to Customize: image URLs and targeting logic are stored in a simple configuration object within the JavaScript, making it easy to adapt for your own needs.
 
 Self-Contained: All necessary HTML, CSS, and JavaScript are in a single file for maximum portability.
 
@@ -19,11 +19,11 @@ Self-Contained: All necessary HTML, CSS, and JavaScript are in a single file for
 
 2. If the primary API fails, it automatically calls a fallback API (ipinfo.io) to ensure a high success rate.
 
-3. If both geolocation APIs are unreachable, the rotator defaults to showing the USA-specific ads.
+3. If both geolocation APIs are unreachable, the rotator defaults to showing the USA-specific images.
 
-4. Based on the returned country code, the script selects the appropriate ad set from the ads configuration object.
+4. Based on the returned country code, the script selects the appropriate image set from the image configuration object.
 
-5. The src attributes of the <img> elements on the page are dynamically updated with the selected ad image URLs, and the ads fade in.
+5. The src attributes of the <img> elements on the page are dynamically updated with the selected image URLs, and the images fade in.
 
 # Technologies Used
 HTML5
@@ -34,10 +34,10 @@ Vanilla JavaScript (ES6+)
 
 # Configuration
 Configuration
-To customize the ad rotator, you only need to edit the <script> section of the ad-rotator.html file.
+To customize the image rotator, you only need to edit the <script> section of the image-rotator.html file.
 
-1. Update Ad Image URLs: Modify the ads object to point to your ad creatives. You can add, remove, or change properties to fit your campaign.
-2. Adjust Targeting Logic: The ad selection is handled by a simple if/else block within the initializeAdRotator function. You can add more else if conditions to target different countries or regions.
+1. Update Image URLs: Modify the images object to point to your image creatives. You can add, remove, or change properties to fit your campaign.
+2. Adjust Targeting Logic: The image selection is handled by a simple if/else block within the initializeImageRotator function. You can add more else if conditions to target different countries or regions.
 
 # Usage
 
